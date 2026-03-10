@@ -39,7 +39,7 @@
                     <img src="./assets/logo.png" alt="">
                 </div>
                 <div class="balance">
-                    <h3 class="text-[18px] font-extrabold"> $<span id="usr-balance">45000</span></h3>
+                    <h3 class="text-[18px] font-extrabold"> $<span id="usr-balance">0</span></h3>
                     <p class="text-[14px] font-normal text-neutral/50">Available Balance</p>
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 <img src="./assets/opt-3.png" alt="">
                 <p class="text-[14px] font-normal">Transfer Money</p>
             </button>
-            <button class="btn btn-primary btn-soft flex-col h-full py-6">
+            <button id="get-bonus-btn" class="btn btn-primary btn-soft flex-col h-full py-6">
                 <img src="./assets/opt-4.png" alt="">
                 <p class="text-[14px] font-normal">Get Bonus</p>
             </button>
@@ -83,7 +83,7 @@
         </div>
     </section>
 
-    <section id="cashout" class="w-11/12 mx-auto mt-6 space-y-6 pt-6">
+    <section id="cashout" class="w-11/12 mx-auto mt-6 space-y-6 pt-6" hidden>
         <h1 class="text-[18px] font-semibold">Cash Out</h1>
         <fieldset class="mx-auto fieldset bg-base-200 border-base-300 rounded-box w-full border p-4 shadow">
 
@@ -96,13 +96,25 @@
 
             <label class="label font-medium text-neutral/70">Pin Number</label>
             <input id="cashout-pin-field" maxlength="4" minlength="4" type="password" class="input w-full rounded-full"
-                placeholder="Enter 4 Digit Pin Number" />
+                placeholder="Enter 4 Digit Pin Number" value="1234" />
 
             <button id="withdraw-btn" class="btn btn-primary rounded-full mt-4">Withdraw Money</button>
         </fieldset>
     </section>
+
+
+    <section id="get-bonus" class="w-11/12 mx-auto mt-6 space-y-6 pt-6" hidden>
+        <h1 class="text-[18px] font-semibold">Get Bonus</h1>
+        <fieldset class="mx-auto fieldset bg-base-200 border-base-300 rounded-box w-full border p-4 shadow">
+            <label class="label font-medium text-neutral/70">Enter Bonus Coupon</label>
+            <input type="text" class="input w-full rounded-full" placeholder="Enter your coupon" value="payoo2026" />
+            <button id="getbonus-btn" class="btn btn-primary rounded-full mt-4">Get Bonus</button>
+        </fieldset>
+
+    </section>
+    <script src=".//scripts/helpers.js"></script>
     <script src="./scripts/home.js"></script>
-    <script src="./scripts/cashout.js"></script>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>

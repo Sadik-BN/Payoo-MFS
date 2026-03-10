@@ -1,6 +1,26 @@
-document.getElementById("withdraw-btn").addEventListener("click", () => {
-    let prevAmnt = document.getElementById("usr-balance").innerText;
-    prevAmnt = Number(prevAmnt);
+try {
+    loginBtn.addEventListener("click", () => {
+        let enteredNum = document.getElementById("num-field").value;
+        let enteredPin = document.getElementById("pin-field").value;
+
+        if (isNaN(enteredNum) || isNaN(enteredPin) || enteredNum.length < 11 || enteredPin.length < 4) {
+            alert("Invalid Mobile Number or pin");
+            return;
+        }
+
+        if (enteredNum === '01234567891' && enteredPin === '1234') {
+            alert("Login Sucessfull");
+            window.location.assign("./home.html");
+            // window.location.replace("./home.html");
+        }
+        else {
+            alert("Login Failed");
+            return;
+        }
+    });
+} catch (error) { };
+
+withdrawBtn.addEventListener("click", () => {
     let withdrwnAmnt = document.getElementById("cashout-amount-field").value;
     withdrwnAmnt = Number(withdrwnAmnt);
     let agentNum = document.getElementById("cashout-agent-field").value;
@@ -12,7 +32,7 @@ document.getElementById("withdraw-btn").addEventListener("click", () => {
         alert("Invalid Mobile Number or pin");
         return;
     }
-    if (withdrwnAmnt > prevAmnt || withdrwnAmnt < 0) {
+    if (withdrwnAmnt > userAmnt || withdrwnAmnt < 0) {
         document.getElementById("cashout-amount-field").value = "";
         document.getElementById("cashout-agent-field").value = "";
         document.getElementById("cashout-pin-field").value = "";
@@ -32,9 +52,22 @@ document.getElementById("withdraw-btn").addEventListener("click", () => {
         document.getElementById("cashout-agent-field").value = "";
         document.getElementById("cashout-pin-field").value = "";
         alert("Cashout Sucessfull");
-        let newBalance = prevAmnt - withdrwnAmnt;
-        document.getElementById("usr-balance").innerText = newBalance;
+        userAmnt -= withdrwnAmnt;
+        updateBalance();
         return;
     }
 
-})
+});
+
+
+getBonusBtn.addEventListener("click", () => {
+    let enteredCoupon = document.querySelector("#getbonus-btn").previousElementSibling.value;
+
+    if (enteredCoupon === "payoo2026") {
+        alert("Congratulations! You've received a bonus of $500.");
+        userAmnt += 500;
+        updateBalance();
+    } else {
+        alert("Invalid coupon code. Please try again.");
+    }
+});
