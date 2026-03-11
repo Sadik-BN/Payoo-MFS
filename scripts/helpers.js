@@ -9,3 +9,9 @@ updateBalance();
 
 let withdrawBtn = document.getElementById("withdraw-btn");
 let getBonusBtn = document.getElementById("getbonus-btn");
+let transactionsBtn = document.getElementById("transactions-btn");
+
+
+
+document.getElementById("history").noHistory = true;
+const now = new Date();

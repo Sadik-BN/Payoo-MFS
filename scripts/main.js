@@ -51,6 +51,17 @@ withdrawBtn.addEventListener("click", () => {
         document.getElementById("cashout-amount-field").value = "";
         document.getElementById("cashout-agent-field").value = "";
         document.getElementById("cashout-pin-field").value = "";
+        document.getElementById("history").innerHTML += `        
+        <div class="flex gap-4 bg-base-200 shadow-md rounded-lg p-4">
+            <div class="h-[45px] w-[45px] p-[11px] rounded-full bg-[#08080805]">
+                <img src="assets/opt-6.png" alt="">
+            </div>
+            <div>
+                <h3 class="font-bold text-[16px]"> Cashout </h3>
+                <p class="text-[12px] text-neutral/50">Withdrawn Amount: $${withdrwnAmnt} <br> Time: ${now.toLocaleTimeString()} <br> Date: ${now.toLocaleDateString()}</p>
+            </div>
+        </div>`;
+        document.getElementById("history").noHistory = false;
         alert("Cashout Sucessfull");
         userAmnt -= withdrwnAmnt;
         updateBalance();
@@ -67,6 +78,17 @@ getBonusBtn.addEventListener("click", () => {
         alert("Congratulations! You've received a bonus of $500.");
         userAmnt += 500;
         updateBalance();
+        document.getElementById("history").innerHTML += `        
+        <div class="flex gap-4 bg-base-200 shadow-md rounded-lg p-4">
+            <div class="h-[45px] w-[45px] p-[11px] rounded-full bg-[#08080805]">
+                <img src="assets/opt-6.png" alt="">
+            </div>
+            <div>
+                <h3 class="font-bold text-[16px]"> Bonus </h3>
+                <p class="text-[12px] text-neutral/50">Bonus Amount: $500 <br> Time: ${now.toLocaleTimeString()} <br> Date: ${now.toLocaleDateString()}</p>
+            </div>
+        </div>`;
+        document.getElementById("history").noHistory = false;
     } else {
         alert("Invalid coupon code. Please try again.");
     }

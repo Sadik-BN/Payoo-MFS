@@ -76,7 +76,7 @@
                 <img src="./assets/opt-5.png" alt="">
                 <p class="text-[14px] font-normal">Pay Bill</p>
             </button>
-            <button class="btn btn-primary btn-soft flex-col h-full py-6">
+            <button id="transactions-btn" class="btn btn-primary btn-soft flex-col h-full py-6">
                 <img src="./assets/opt-6.png" alt="">
                 <p class="text-[14px] font-normal">Transactions</p>
             </button>
@@ -110,7 +110,18 @@
             <input type="text" class="input w-full rounded-full" placeholder="Enter your coupon" value="payoo2026" />
             <button id="getbonus-btn" class="btn btn-primary rounded-full mt-4">Get Bonus</button>
         </fieldset>
+    </section>
 
+    <section id="history" class="w-11/12 mx-auto mt-6 space-y-6 pt-6">
+        <h1 class="text-[18px] font-semibold">Transaction History</h1>
+        <div id="no-history" class="flex gap-4 bg-base-200 shadow-md rounded-lg p-4">
+            <div class="h-[45px] w-[45px] p-[11px] rounded-full bg-[#08080805]">
+                <img src="assets/opt-6.png" alt="">
+            </div>
+            <div>
+                <h3 class="font-bold text-[16px]"> No Transactions Found </h3>
+            </div>
+        </div>
     </section>
     <script src=".//scripts/helpers.js"></script>
     <script src="./scripts/home.js"></script>
